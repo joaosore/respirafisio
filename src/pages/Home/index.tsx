@@ -129,8 +129,7 @@ const Repository: React.FC = () => {
       <Sobre id="sobre">
         <div className="container">
           <h2>Sobre nós</h2>
-          <p>Me chamo Cristiane da Silva Cruz me graduei em Fisioterapia pela Unianchieta, me especializei em Fisioterapia Intensiva (UTI) pela Physio Cursos/SP, me tornei Mestre em Ciências da Saúde pela Faculdade de Medicina de Jundiaí.</p>
-          <p>Possuo certificados para atendimento das seguintes técnicas: Bandagem elástica, ventosaterapia e liberação miofascial manual e instrumental. Apta a atendimento em pilates solo, bola e aparelhos pela VOLL pilates.</p>
+          <p>Cristiane Cruz é fisioterapeuta intensivista formada há 5 anos pelo Unianchieta, Pós-Graduada em Terapia Intensiva e Mestre em Ciências da saúde.</p>
         </div>
       </Sobre>
       <Contato id="contato">
