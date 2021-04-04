@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2937.7" height="1460.913" viewBox="0 0 2937.7 1460.913">
+  <defs>
+    <linearGradient id="linear-gradient" x1="1" y1="0.939" x2="0" y2="0.061" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00c4ff" stop-opacity="0.455"/>
+      <stop offset="1" stop-color="#0031ff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="0.326" x2="1" y2="0.674" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0031ff"/>
+      <stop offset="1" stop-color="#00c4ff" stop-opacity="0.455"/>
+    </linearGradient>
+  </defs>
+  <g id="Untitled-1" transform="translate(466.5 518)">
+    <path id="Caminho_1" data-name="Caminho 1" d="M1050-498c784.91,0,1421.2,322.56,1421.2,720.457S1834.91,942.913,1050,942.913-371.2,620.354-371.2,222.457,265.092-498,1050-498Z" fill-rule="evenodd" fill="url(#linear-gradient)"/>
+    <path id="Caminho_2" data-name="Caminho 2" d="M960-518c787.84,0,1426.51,323.763,1426.51,723.145S1747.84,928.29,960,928.29-466.5,604.527-466.5,205.145,172.163-518,960-518Z" fill-rule="evenodd" fill="url(#linear-gradient-2)"/>
+  </g>
+</svg>

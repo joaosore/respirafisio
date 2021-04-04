@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.js": "/wp-content/themes/medway/react/build/static/js/main.f8433e02.chunk.js",
+    "main.js.map": "/wp-content/themes/medway/react/build/static/js/main.f8433e02.chunk.js.map",
+    "runtime-main.js": "/wp-content/themes/medway/react/build/static/js/runtime-main.7a149cfb.js",
+    "runtime-main.js.map": "/wp-content/themes/medway/react/build/static/js/runtime-main.7a149cfb.js.map",
+    "static/css/2.631cbb15.chunk.css": "/wp-content/themes/medway/react/build/static/css/2.631cbb15.chunk.css",
+    "static/js/2.d8d6681b.chunk.js": "/wp-content/themes/medway/react/build/static/js/2.d8d6681b.chunk.js",
+    "static/js/2.d8d6681b.chunk.js.map": "/wp-content/themes/medway/react/build/static/js/2.d8d6681b.chunk.js.map",
+    "index.html": "/wp-content/themes/medway/react/build/index.html",
+    "static/css/2.631cbb15.chunk.css.map": "/wp-content/themes/medway/react/build/static/css/2.631cbb15.chunk.css.map",
+    "static/js/2.d8d6681b.chunk.js.LICENSE.txt": "/wp-content/themes/medway/react/build/static/js/2.d8d6681b.chunk.js.LICENSE.txt",
+    "static/media/aspas.3c25c306.svg": "/wp-content/themes/medway/react/build/static/media/aspas.3c25c306.svg",
+    "static/media/github-background.7fa45dda.svg": "/wp-content/themes/medway/react/build/static/media/github-background.7fa45dda.svg",
+    "static/media/logo-medway-minificado.ff674172.png": "/wp-content/themes/medway/react/build/static/media/logo-medway-minificado.ff674172.png",
+    "static/media/stars.9bf5048e.svg": "/wp-content/themes/medway/react/build/static/media/stars.9bf5048e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7a149cfb.js",
+    "static/css/2.631cbb15.chunk.css",
+    "static/js/2.d8d6681b.chunk.js",
+    "static/js/main.f8433e02.chunk.js"
+  ]
+}
