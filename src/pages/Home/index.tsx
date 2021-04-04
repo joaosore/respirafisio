@@ -130,6 +130,7 @@ const Repository: React.FC = () => {
         <div className="container">
           <h2>Sobre nós</h2>
           <p>Cristiane Cruz é fisioterapeuta intensivista formada há 5 anos pelo Unianchieta, Pós-Graduada em Terapia Intensiva e Mestre em Ciências da saúde.</p>
+          <p>Realiza atendimentos em parceria com a Clínica Vivaz e Academia Companhia Forma, para mais informações entre em contato.</p>
         </div>
       </Sobre>
       <Contato id="contato">
