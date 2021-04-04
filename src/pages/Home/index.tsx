@@ -109,7 +109,7 @@ const Repository: React.FC = () => {
       </Atendimentos>
       <Publicacoes id="publicacoes">
         <div className="container">
-          <h2>Nossos Atendimentos</h2>
+          <h2>Nossas Publicações</h2>
           <div className="box-itens">
             <div className="item">
               <a href="https://tribunadejundiai.com.br/saude/coronavirus/covid-cuidados-com-fisioterapeuta-ajudam-na-recuperacao-pulmonar/" target="_blank" rel="noreferrer">
@@ -128,14 +128,14 @@ const Repository: React.FC = () => {
       </Publicacoes>
       <Sobre id="sobre">
         <div className="container">
-          <h2>Nossos Atendimentos</h2>
+          <h2>Sobre nós</h2>
           <p>Me chamo Cristiane da Silva Cruz me graduei em Fisioterapia pela Unianchieta, me especializei em Fisioterapia Intensiva (UTI) pela Physio Cursos/SP, me tornei Mestre em Ciências da Saúde pela Faculdade de Medicina de Jundiaí.</p>
           <p>Possuo certificados para atendimento das seguintes técnicas: Bandagem elástica, ventosaterapia e liberação miofascial manual e instrumental. Apta a atendimento em pilates solo, bola e aparelhos pela VOLL pilates.</p>
         </div>
       </Sobre>
       <Contato id="contato">
         <div className="container">
-          <h2>Nossos Atendimentos</h2>
+          <h2>Contato</h2>
           <div className="box-itens">
             <div className="item">
               <h3>Equilibrium</h3>
