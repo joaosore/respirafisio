@@ -159,7 +159,7 @@ const Repository: React.FC = () => {
             </div>
             <div className="item">
               <img src={Whatsapp} alt=""/>
-              <a href="a" target="_blank" rel="noreferrer">(00) 0 0000-0000</a>
+              <a href="a" target="_blank" rel="noreferrer">(11) 9 4026-5132</a>
             </div>
           </div>
         </div>
