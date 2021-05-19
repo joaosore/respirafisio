@@ -159,7 +159,7 @@ const Repository: React.FC = () => {
             </div>
             <div className="item">
               <img src={Whatsapp} alt=""/>
-              <a href="a" target="_blank" rel="noreferrer">(11) 9 4026-5132</a>
+              <a href="https://api.whatsapp.com/send?phone=5511940265132" target="_blank" rel="noreferrer">(11) 9 4026-5132</a>
             </div>
           </div>
         </div>
