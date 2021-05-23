@@ -31,6 +31,7 @@ module.exports = {
     'prettier/prettier': 'off',
     'react/jsx-props-no-spreading': 'off',
     camelcase: 'off',
+    'react/self-closing-comp': 'off',
     'react/no-danger': 'off',
     'react/prop-types': 'off',
     'react/no-array-index-key': 'off',
