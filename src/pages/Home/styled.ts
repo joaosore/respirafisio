@@ -10,6 +10,7 @@ import BGContato from '../../assets/bg_contato.svg';
 
 import whatsapp from '../../assets/whatsapp.svg';
 import email from '../../assets/email.svg';
+import instagram from '../../assets/instagram.svg';
 
 import menu from '../../assets/menu.svg';
 import close from '../../assets/close.svg';
@@ -947,12 +948,36 @@ export const Footer = styled.footer`
           text-decoration: none;
           font-size: 1.625em;
           font-weight: 500;
+          margin-bottom: 15px;
           @media (orientation: portrait) {
             font-size: 1em;
           }
           &:before {
             content: '';
             background-image: url(${whatsapp});
+            width: 30px;
+            height: 30px;
+            display: block;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 15px;
+          }
+        }
+        .instagram {
+          position: relative;
+          display: flex;
+          align-items: center;
+          color: #89ebc9;
+          text-decoration: none;
+          font-size: 1.625em;
+          font-weight: 500;
+          @media (orientation: portrait) {
+            font-size: 1em;
+          }
+          &:before {
+            content: '';
+            background-image: url(${instagram});
             width: 30px;
             height: 30px;
             display: block;

@@ -490,21 +490,33 @@ const Repository: React.FC = () => {
           <div className="itens">
             <div className="logo">
               <img src={Logo} alt="" />
-              RESPIRA FISIOTERAPIA
+              RESPIRA FISIO
             </div>
             <div className="links">
               <div className="box-links">
                 <a
                   href="mailto:cristiane.cruz@respirafisio.com.br"
                   className="email"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   cristiane.cruz@respirafisio.com.br
                 </a>
                 <a
                   href="https://api.whatsapp.com/send?phone=5511940265132&text=Ol%C3%A1%20Dra%20Cristiane.%20Gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o!"
                   className="whatsapp"
+                  target="_blank"
+                  rel="noreferrer"
                 >
                   (11) 9 4026-5132
+                </a>
+                <a
+                  href="https://www.instagram.com/respira_fisio/"
+                  className="instagram"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  @respira_fisio
                 </a>
               </div>
             </div>
