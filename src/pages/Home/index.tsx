@@ -184,7 +184,7 @@ const Repository: React.FC = () => {
                   hideWhenDoneDelay: 0,
                 }}
               >
-                Respira Fisioterapia
+                Respira Fisio
               </Typist>
             </h1>
             <h3>
@@ -231,10 +231,6 @@ const Repository: React.FC = () => {
         <Column color="#89EBC9" height className="box-fixed">
           <div className="box-text">
             <h2>Nossos Atendimentos</h2>
-            <h3>
-              Fisioterapia Respiratória Pós Covid-19 Fisioterapia Ortopédica
-              Hidroterapia Pilates
-            </h3>
           </div>
         </Column>
         <Column color="#FFF" className="box-itens">
@@ -254,7 +250,7 @@ const Repository: React.FC = () => {
                 />
               </div>
               <div className="box-text">
-                <h5>Fisioterapia Respiratória Pós Covid-19</h5>
+                <h5>Fisioterapia Pós Covid-19</h5>
                 <p>
                   Através da fisioterapia é possível a recuperação da capacidade
                   pulmonar perdida após a infecção por Covid 19. O tratamento

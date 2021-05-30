@@ -403,6 +403,9 @@ export const Atendimentos = styled.section<AtendimentosProps>`
       color: #fff;
       font-weight: 500;
       padding-top: 30px;
+      @media (orientation: portrait) {
+        display: none;
+      }
     }
     @media only screen and (max-width: 1360px) {
       h2 {
