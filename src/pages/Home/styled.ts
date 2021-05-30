@@ -11,9 +11,13 @@ import BGContato from '../../assets/bg_contato.svg';
 import whatsapp from '../../assets/whatsapp.svg';
 import email from '../../assets/email.svg';
 
+import menu from '../../assets/menu.svg';
+import close from '../../assets/close.svg';
+
 interface HeaderProps {
   scroll: boolean;
   logo: string;
+  menu?: boolean;
 }
 
 interface ColumnProps {
@@ -79,7 +83,6 @@ export const Header = styled.header<HeaderProps>`
         background-color: #4881f1;
       }
     `}
-
   ul {
     display: flex;
     align-items: center;
@@ -117,15 +120,69 @@ export const Header = styled.header<HeaderProps>`
       }
     }
   }
+  .menu {
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-color: #4881f1;
+    -webkit-mask-image: url(${menu});
+    mask-image: url(${menu});
+    -webkit-mask-size: contain;
+    -webkit-mask-position: left;
+    -webkit-mask-repeat: no-repeat;
+    color: transparent;
+  }
+
+  @media (orientation: portrait) {
+    background-color: #fff;
+    height: 75px;
+    padding: 15px;
+    justify-content: space-between;
+    a {
+      width: 50px;
+    }
+    .logo {
+      max-width: 50px;
+      width: 100%;
+      background-color: #4881f1;
+    }
+    ul {
+      flex-direction: column;
+      display: flex;
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      background-color: white;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 350ms ease-in-out;
+      ${props =>
+        props.menu &&
+        css`
+          opacity: 1;
+          pointer-events: all;
+        `}
+    }
+    .menu {
+      display: flex;
+      ${props =>
+        props.menu &&
+        css`
+          -webkit-mask-image: url(${close});
+          mask-image: url(${close});
+        `}
+    }
+  }
 
   @media only screen and (max-width: 991px) {
     .container {
       display: flex;
       align-items: center;
       justify-content: center;
-    }
-    ul {
-      display: none;
     }
   }
 `;
@@ -140,6 +197,10 @@ export const Open = styled.section`
   .box-text {
     padding-right: 50px;
     padding-left: 50px;
+    @media (orientation: portrait) {
+      padding-top: 125px;
+      padding-bottom: 50px;
+    }
     h1 {
       font-weight: bold;
       font-size: 4.625em;
@@ -171,6 +232,17 @@ export const Open = styled.section`
         border: 3px solid #fff;
         background-color: transparent;
         color: #fff;
+      }
+    }
+    @media only screen and (max-width: 1360px) {
+      h1 {
+        font-size: 2.625em;
+      }
+      h3 {
+        font-size: 1em;
+      }
+      .btn {
+        font-size: 1em;
       }
     }
   }
@@ -229,6 +301,17 @@ export const Open = styled.section`
       }
     }
   }
+  @media (orientation: portrait) {
+    height: auto;
+    flex-direction: column;
+    position: relative;
+    .box-img {
+      padding: 15px;
+      object {
+        transform: translate(0);
+      }
+    }
+  }
 `;
 
 export const Column = styled.div<ColumnProps>`
@@ -244,7 +327,7 @@ export const Column = styled.div<ColumnProps>`
       height: 100vh;
     `}
   &:first-child {
-    max-width: 630px;
+    max-width: 40%;
   }
   ${props =>
     props.reverse &&
@@ -256,6 +339,18 @@ export const Column = styled.div<ColumnProps>`
         max-width: 630px;
       }
     `}
+  @media (orientation: portrait) {
+    max-width: 100%;
+    width: 100%;
+    &:first-child {
+      max-width: 100%;
+      padding-top: 150px;
+      padding-bottom: 150px;
+      @media (orientation: portrait) {
+        padding: 0;
+      }
+    }
+  }
 `;
 
 export const Atendimentos = styled.section<AtendimentosProps>`
@@ -288,11 +383,15 @@ export const Atendimentos = styled.section<AtendimentosProps>`
       `}
   }
   .box-itens {
-    padding-left: 630px;
+    padding-left: 40%;
   }
   .box-text {
     padding-right: 50px;
     padding-left: 50px;
+    @media (orientation: portrait) {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
     h2 {
       font-weight: bold;
       font-size: 4em;
@@ -305,11 +404,45 @@ export const Atendimentos = styled.section<AtendimentosProps>`
       font-weight: 500;
       padding-top: 30px;
     }
+    @media only screen and (max-width: 1360px) {
+      h2 {
+        font-size: 2em;
+      }
+      h3 {
+        font-size: 1em;
+      }
+    }
   }
   .box-cards {
     background-color: #fff;
     padding-top: 150px;
     padding-bottom: 150px;
+  }
+  @media (orientation: portrait) {
+    flex-direction: column;
+    padding-top: 0;
+    .box-itens {
+      padding-left: 0;
+    }
+    .box-fixed {
+      position: relative;
+      ${props =>
+        props.scroll >= props.vh &&
+        props.scroll < props.lock &&
+        css`
+          position: relative;
+          width: 100%;
+        `}
+      ${props =>
+        props.scroll >= props.lock &&
+        css`
+          position: relative;
+        `}
+    }
+    .box-cards {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
   }
 `;
 
@@ -322,6 +455,30 @@ export const CardAtendimentos = styled.div`
   padding-bottom: 75px;
   &:nth-child(odd) {
     .box-img {
+      &:before {
+        content: '';
+        background-color: #7e8ceb;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        border-radius: 26px;
+        z-index: 0;
+      }
+      &:after {
+        content: '';
+        background-color: #89ebc9;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        right: -10px;
+        bottom: -10px;
+        border-radius: 26px;
+        z-index: 0;
+      }
       .ornamentTopRight {
         right: -55px;
         top: -55px;
@@ -340,6 +497,30 @@ export const CardAtendimentos = styled.div`
   }
   &:nth-child(even) {
     .box-img {
+      &:before {
+        content: '';
+        background-color: #89ebc9;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: -10px;
+        top: -10px;
+        border-radius: 26px;
+        z-index: 0;
+      }
+      &:after {
+        content: '';
+        background-color: #7e8ceb;
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        right: -10px;
+        bottom: -10px;
+        border-radius: 26px;
+        z-index: 0;
+      }
       .ornamentTopRight {
         right: -70px;
         top: -44px;
@@ -356,32 +537,11 @@ export const CardAtendimentos = styled.div`
       }
     }
   }
+  @media (orientation: portrait) {
+    padding: 30px;
+  }
   .box-img {
     position: relative;
-    &:before {
-      content: '';
-      background-color: #7e8ceb;
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      left: -10px;
-      top: -10px;
-      border-radius: 26px;
-      z-index: 0;
-    }
-    &:after {
-      content: '';
-      background-color: #89ebc9;
-      width: 100%;
-      height: 100%;
-      display: block;
-      position: absolute;
-      right: -10px;
-      bottom: -10px;
-      border-radius: 26px;
-      z-index: 0;
-    }
     .ornamentTopRight {
       position: absolute;
       z-index: 5;
@@ -429,6 +589,11 @@ export const Publicacoes = styled.section`
   max-width: 100%;
   overflow: hidden;
   position: relative;
+  @media (orientation: portrait) {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    height: auto;
+  }
   .box-text {
     padding-right: 50px;
     padding-left: 50px;
@@ -444,6 +609,9 @@ export const Publicacoes = styled.section`
       align-items: center;
       justify-content: flex-start;
       padding-top: 45px;
+      @media (orientation: portrait) {
+        justify-content: left;
+      }
       .itens {
         display: flex;
         padding: 15px;
@@ -466,12 +634,24 @@ export const Publicacoes = styled.section`
         }
       }
     }
+    @media only screen and (max-width: 1360px) {
+      h2 {
+        font-size: 2em;
+      }
+    }
   }
   .box-carousel {
     flex: 1;
+    @media (orientation: portrait) {
+      max-width: 100%;
+    }
     .carousel {
       max-width: 900px;
       margin-left: auto;
+      width: 100%;
+      @media (orientation: portrait) {
+        padding: 15px;
+      }
     }
     .owl-theme {
       .owl-dots {
@@ -494,6 +674,9 @@ export const Publicacoes = styled.section`
               color: #4881f1;
               font-size: 1.875em;
               padding-bottom: 28px;
+              @media (orientation: portrait) {
+                font-size: 1.375em;
+              }
             }
             a {
               color: #89ebc9;
@@ -503,6 +686,9 @@ export const Publicacoes = styled.section`
         }
       }
     }
+  }
+  @media (orientation: portrait) {
+    flex-direction: column;
   }
 `;
 
@@ -514,13 +700,29 @@ export const Sobre = styled.section`
   max-width: 100%;
   overflow: hidden;
   height: 100vh;
+  @media (orientation: portrait) {
+    height: auto;
+  }
   .box-img {
     display: flex;
     align-items: center;
     justify-content: center;
+    @media (orientation: portrait) {
+      padding: 15px;
+      padding-bottom: 50px;
+    }
+    object {
+      max-width: 700px;
+      width: 100%;
+    }
   }
   .box-text {
     max-width: 410px;
+    @media (orientation: portrait) {
+      padding: 50px;
+      padding-bottom: 15px;
+      height: auto;
+    }
     h2 {
       color: #4881f1;
       font-size: 4em;
@@ -532,6 +734,14 @@ export const Sobre = styled.section`
       line-height: 1.875em;
       margin-bottom: 30px;
     }
+    @media only screen and (max-width: 1360px) {
+      h2 {
+        font-size: 2em;
+      }
+    }
+  }
+  @media (orientation: portrait) {
+    flex-direction: column-reverse;
   }
 `;
 
@@ -540,11 +750,20 @@ export const Contato = styled.section`
   background-color: #89ebc9;
   background-image: url(${BGContato});
   padding-top: 100px;
+  @media (orientation: portrait) {
+    padding: 15px;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    height: auto;
+  }
   h2 {
     color: #4881f1;
     font-size: 4em;
     text-align: center;
     margin-bottom: -50px;
+    @media (orientation: portrait) {
+      margin-bottom: -85px;
+    }
   }
   .box-cards-contato {
     display: flex;
@@ -553,6 +772,14 @@ export const Contato = styled.section`
     transform: translateY(110px);
     position: relative;
     z-index: 5;
+    @media (orientation: portrait) {
+      flex-direction: column-reverse;
+    }
+  }
+  @media only screen and (max-width: 1360px) {
+    h2 {
+      font-size: 2em;
+    }
   }
 `;
 
@@ -568,6 +795,9 @@ export const CardCompania = styled.div`
   flex-direction: column;
   margin-top: 85px;
   position: relative;
+  @media (orientation: portrait) {
+    margin-top: 100px;
+  }
   &:before {
     content: '';
     background-color: #4881f1;
@@ -604,6 +834,9 @@ export const CardCompania = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      @media (orientation: portrait) {
+        font-size: 1.125em;
+      }
     }
   }
   .endereco {
@@ -632,6 +865,9 @@ export const Footer = styled.footer`
   background-color: #4881f1;
   padding-top: 200px;
   background-image: url(${BGContato});
+  @media (orientation: portrait) {
+    padding-top: 100px;
+  }
   .itens {
     display: flex;
     align-items: center;
@@ -639,6 +875,11 @@ export const Footer = styled.footer`
     padding-top: 75px;
     padding-bottom: 75px;
     position: relative;
+    @media (orientation: portrait) {
+      flex-direction: column;
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
     &:before {
       content: '';
       width: 100%;
@@ -665,6 +906,9 @@ export const Footer = styled.footer`
       justify-content: center;
       color: #fff;
       flex-direction: column;
+      @media (orientation: portrait) {
+        padding-top: 30px;
+      }
       .box-links {
         display: flex;
         flex-direction: column;
@@ -677,6 +921,9 @@ export const Footer = styled.footer`
           font-size: 1.625em;
           font-weight: 500;
           margin-bottom: 15px;
+          @media (orientation: portrait) {
+            font-size: 1em;
+          }
           &:before {
             content: '';
             background-image: url(${email});
@@ -697,6 +944,9 @@ export const Footer = styled.footer`
           text-decoration: none;
           font-size: 1.625em;
           font-weight: 500;
+          @media (orientation: portrait) {
+            font-size: 1em;
+          }
           &:before {
             content: '';
             background-image: url(${whatsapp});

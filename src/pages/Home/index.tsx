@@ -35,16 +35,44 @@ import AumentaAProcuraPorTratamentosParaSequelasDeixadasPelaCovid19 from '../../
 import Logo1 from '../../assets/logo1.png';
 import Logo2 from '../../assets/logo2.png';
 
+import Loading from '../../components/Loading';
+
+const responsive = {
+  0: {
+    stagePadding: 0,
+    margin: 0,
+    items: 1,
+  },
+  1000: {
+    stagePadding: 0,
+    margin: 0,
+    items: 1,
+  },
+  1250: {
+    stagePadding: 200,
+    margin: 100,
+    items: 1,
+  },
+};
+
 const Repository: React.FC = () => {
   const [scrollTop, setScrollTop] = useState(0);
   const [carousel, setCarousel] = useState<any>();
   const [vh, setVH] = useState<number>(0);
+  const [sectionPublicacoes, setSectionPublicacoes] = useState<any>(0);
+  const [sectionSobre, setSectionSobre] = useState<any>(0);
+  const [sectionContato, setSectionContato] = useState<any>(0);
   const [TypingDone, setTypingDone] = useState<boolean>(false);
   const [cardsAtendimentos, setCardsAtendimentos] = useState<any>(0);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [openMenu, setOpenMenu] = useState<boolean>(false);
+
+  const handleOpenMenu = () => {
+    const status = !openMenu;
+    setOpenMenu(status);
+  };
 
   const handleCarouselPrev = () => {
-    console.log(carousel);
-
     carousel.prev(500);
   };
 
@@ -53,7 +81,51 @@ const Repository: React.FC = () => {
   };
 
   const handleAtendimentos = () => {
-    window.scrollTo(0, vh + 1);
+    setLoading(true);
+    setTimeout(() => {
+      const i = openMenu ? -75 : 1;
+      window.scrollTo(0, vh + i);
+      setOpenMenu(false);
+    }, 1000);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
+
+  const handlePublicacoes = () => {
+    setLoading(true);
+    setTimeout(() => {
+      const i = openMenu ? -75 : 1;
+      window.scrollTo(0, sectionPublicacoes.offsetTop + i);
+      setOpenMenu(false);
+    }, 1000);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
+
+  const handleSobre = () => {
+    setLoading(true);
+    setTimeout(() => {
+      const i = openMenu ? -75 : 1;
+      window.scrollTo(0, sectionSobre.offsetTop + i);
+      setOpenMenu(false);
+    }, 1000);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  };
+
+  const handleContato = () => {
+    setLoading(true);
+    setTimeout(() => {
+      const i = openMenu ? -75 : 1;
+      window.scrollTo(0, sectionContato.offsetTop + i);
+      setOpenMenu(false);
+    }, 1000);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
   };
 
   useEffect(() => {
@@ -70,7 +142,8 @@ const Repository: React.FC = () => {
 
   return (
     <>
-      <Header scroll={scrollTop > vh} logo={Logo}>
+      {loading && <Loading />}
+      <Header scroll={scrollTop > vh} logo={Logo} menu={openMenu}>
         <a href="/">
           <div className="logo"></div>
         </a>
@@ -81,15 +154,24 @@ const Repository: React.FC = () => {
             </button>
           </li>
           <li>
-            <a href="#publicacoes">Publicações</a>
+            <button type="button" onClick={handlePublicacoes}>
+              Publicações
+            </button>
           </li>
           <li>
-            <a href="#sobre">Sobre nós</a>
+            <button type="button" onClick={handleSobre}>
+              Sobre nós
+            </button>
           </li>
           <li>
-            <a href="#contato">Contato</a>
+            <button type="button" onClick={handleContato}>
+              Contato
+            </button>
           </li>
         </ul>
+        <button type="button" className="menu" onClick={handleOpenMenu}>
+          a
+        </button>
       </Header>
       <Open>
         <Column color="#4881F1">
@@ -102,7 +184,7 @@ const Repository: React.FC = () => {
                   hideWhenDoneDelay: 0,
                 }}
               >
-                Fisioterapia Pós Covid-19
+                Respira Fisioterapia
               </Typist>
             </h1>
             <h3>
@@ -239,7 +321,12 @@ const Repository: React.FC = () => {
           </div>
         </Column>
       </Atendimentos>
-      <Publicacoes id="publicacoes">
+      <Publicacoes
+        id="publicacoes"
+        ref={divElement => {
+          setSectionPublicacoes(divElement);
+        }}
+      >
         <div className="box-text">
           <h2>Nossas Publicações</h2>
           <div className="btn-carousel">
@@ -269,6 +356,7 @@ const Repository: React.FC = () => {
               stagePadding={200}
               ref={slider => setCarousel(slider)}
               margin={100}
+              responsive={responsive}
             >
               <div className="item">
                 <div className="card">
@@ -311,7 +399,12 @@ const Repository: React.FC = () => {
           </div>
         </div>
       </Publicacoes>
-      <Sobre id="sobre">
+      <Sobre
+        id="sobre"
+        ref={divElement => {
+          setSectionSobre(divElement);
+        }}
+      >
         <Column color="#FFF" reverse>
           <div className="box-img">
             <object
@@ -325,21 +418,23 @@ const Repository: React.FC = () => {
           <div className="box-text">
             <h2>Sobre Nós</h2>
             <p>
-              Me chamo Cristiane da Silva Cruz me graduei em Fisioterapia pela
-              Unianchieta, me especializei em Fisioterapia Intensiva (UTI) pela
-              Physio Cursos/SP, me tornei Mestre em Ciências da Saúde pela
-              Faculdade de Medicina de Jundiaí.
+              Cristiane Cruz é Fisioterapeuta Intensivista formada há 5 anos
+              pelo Unianchieta, Pós-Graduada em Terapia Intensiva e Mestre em
+              Ciências da Saúde.
             </p>
             <p>
-              Possuo certificados para atendimento das seguintes técnicas:
-              Bandagem elástica, ventosaterapia e liberação miofascial manual e
-              instrumental. Apta a atendimento em pilates solo, bola e aparelhos
-              pela VOLL pilates.
+              Realiza atendimentos em parceria com a Clínica Vivaz e Academia
+              Companhia Forma, para mais informações entre em contato.
             </p>
           </div>
         </Column>
       </Sobre>
-      <Contato id="contato">
+      <Contato
+        id="contato"
+        ref={divElement => {
+          setSectionContato(divElement);
+        }}
+      >
         <Container>
           <h2>Contato</h2>
           <div className="box-cards-contato">
@@ -356,7 +451,7 @@ const Repository: React.FC = () => {
                   <b>Endereço:</b>
                 </p>
                 <p>
-                  Rua Sebastião Rocha, 171 - Jardim Ermida II, Jundiaí - SP,
+                  Rua Sebastião Rocha, 171 - Eloy Chaves, Jundiaí - SP,
                   13212-208
                 </p>
               </div>
@@ -374,8 +469,8 @@ const Repository: React.FC = () => {
                   <b>Endereço:</b>
                 </p>
                 <p>
-                  R. Barão de Teffé, 1000 - Aglomeração Urbana de Jundiaí,
-                  Jundiaí - SP, 13208-761
+                  R. Barão de Teffé, 1000 - Jardim Ana Maria, Jundiaí - SP,
+                  13208-761
                 </p>
               </div>
             </CardCompania>
@@ -387,7 +482,7 @@ const Repository: React.FC = () => {
           <div className="itens">
             <div className="logo">
               <img src={Logo} alt="" />
-              RESPERIA FISIO
+              RESPIRA FISIOTERAPIA
             </div>
             <div className="links">
               <div className="box-links">
