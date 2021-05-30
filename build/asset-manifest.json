@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/static/js/main.f1e4008c.chunk.js",
-    "main.js.map": "/static/js/main.f1e4008c.chunk.js.map",
+    "main.js": "/static/js/main.5475110f.chunk.js",
+    "main.js.map": "/static/js/main.5475110f.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.0b0c428e.js",
     "runtime-main.js.map": "/static/js/runtime-main.0b0c428e.js.map",
     "static/css/2.a44c59e0.chunk.css": "/static/css/2.a44c59e0.chunk.css",
@@ -14,6 +14,7 @@
     "static/media/Covid- cuidados com fisioterapeuta ajudam na recuperação pulmonar.0165b40c.jpg": "/static/media/Covid- cuidados com fisioterapeuta ajudam na recuperação pulmonar.0165b40c.jpg",
     "static/media/bg-publicacao.81701fbf.svg": "/static/media/bg-publicacao.81701fbf.svg",
     "static/media/bg_contato.33585419.svg": "/static/media/bg_contato.33585419.svg",
+    "static/media/close.b8896a1f.svg": "/static/media/close.b8896a1f.svg",
     "static/media/email.35801052.svg": "/static/media/email.35801052.svg",
     "static/media/fisioterapia-ortopedica.aeb8ecf9.jpg": "/static/media/fisioterapia-ortopedica.aeb8ecf9.jpg",
     "static/media/fisioterapia-respiratória-pos-covid-19.c043a856.jpg": "/static/media/fisioterapia-respiratória-pos-covid-19.c043a856.jpg",
@@ -22,6 +23,7 @@
     "static/media/ilustracao_2.9bdbc551.svg": "/static/media/ilustracao_2.9bdbc551.svg",
     "static/media/logo-respira-fisio.8a2b977a.svg": "/static/media/logo-respira-fisio.8a2b977a.svg",
     "static/media/logo2.e54655e4.png": "/static/media/logo2.e54655e4.png",
+    "static/media/menu.38a42dd0.svg": "/static/media/menu.38a42dd0.svg",
     "static/media/ornament_1.0b648f1e.svg": "/static/media/ornament_1.0b648f1e.svg",
     "static/media/ornament_2.98d35dee.svg": "/static/media/ornament_2.98d35dee.svg",
     "static/media/ornament_3.2b73f5ee.svg": "/static/media/ornament_3.2b73f5ee.svg",
@@ -34,6 +36,6 @@
     "static/js/runtime-main.0b0c428e.js",
     "static/css/2.a44c59e0.chunk.css",
     "static/js/2.b3c5d6e8.chunk.js",
-    "static/js/main.f1e4008c.chunk.js"
+    "static/js/main.5475110f.chunk.js"
   ]
 }
