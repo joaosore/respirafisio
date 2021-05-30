@@ -12,12 +12,12 @@ export default createGlobalStyle`
   body {
     -webkit-font-smoothing: antialiased;
     background: #FFF;
-    font-family: 'Montserrat', sans-serif;
-    height: 200vh;
+    font-family: 'Rubik', sans-serif;
+    min-height: 200vh;
   }
 
   body, input, button {
-    font: 16px Montserrat, sans-serif;
+    font: 16px 'Rubik', sans-serif;
   }
 
   button {
