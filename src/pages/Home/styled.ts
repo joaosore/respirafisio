@@ -430,6 +430,7 @@ export const Atendimentos = styled.section<AtendimentosProps>`
     }
     .box-fixed {
       position: relative;
+      height: auto;
       ${props =>
         props.scroll >= props.vh &&
         props.scroll < props.lock &&
