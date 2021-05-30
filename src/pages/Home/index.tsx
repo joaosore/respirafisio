@@ -367,7 +367,13 @@ const Repository: React.FC = () => {
                       Covid: cuidados com fisioterapeuta ajudam na recuperação
                       pulmonar
                     </h5>
-                    <a href=".">Saiba mais</a>
+                    <a
+                      href="https://tribunadejundiai.com.br/saude/coronavirus/covid-cuidados-com-fisioterapeuta-ajudam-na-recuperacao-pulmonar/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Saiba mais
+                    </a>
                   </div>
                 </div>
               </div>
@@ -387,7 +393,13 @@ const Repository: React.FC = () => {
                       Aumenta a procura por tratamentos para sequelas deixadas
                       pela Covid-19
                     </h5>
-                    <a href=".">Saiba mais</a>
+                    <a
+                      href="https://globoplay.globo.com/v/9272531/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Saiba mais
+                    </a>
                   </div>
                 </div>
               </div>
